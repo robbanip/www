@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Pemrograman Aplikasi Mobile</title>
+    </head>
+    <body>
+      <center>
+      	<b>Penjumlahan</b>
+      	<br><input type="text" id="input1" value="1">
+       <br><input type="text" id="input2" value="2">
+       <!--<button type="button" onclick='document.getElementById("input1").value = "halo anjay"'>Coba Tekan</button>-->
+       <p id="hasil">ini hasilnya</p>
+       <button type="button" onclick='functionjumlah()'>Jumlahkan</button>
+
+       <br><br><b>Menghitung Resistor</b>
+       <br>Cincin 1 = <select id="ring1">
+    <option value="0">Hitam</option>
+    <option value="1">Coklat</option>
+    <option value="2">Merah</option>
+    <option value="3">Orange</option>
+    <option value="4">Kuning</option>
+    <option value="5">Hijau</option>
+    <option value="6">Biru</option>
+    <option value="7">Ungu</option>
+    <option value="8">Abu-Abu</option>
+    <option value="9">Putih</option>
+</select>
+    Cincin 2 = <select id="ring2">
+    <option value="0">Hitam</option>
+    <option value="1">Coklat</option>
+    <option value="2">Merah</option>
+    <option value="3">Orange</option>
+    <option value="4">Kuning</option>
+    <option value="5">Hijau</option>
+    <option value="6">Biru</option>
+    <option value="7">Ungu</option>
+    <option value="8">Abu-Abu</option>
+    <option value="9">Putih</option>
+</select>
+Cincin 3 = <select id="ring3">
+    <option value="0">Hitam</option>
+    <option value="1">Coklat</option>
+    <option value="2">Merah</option>
+    <option value="3">Orange</option>
+    <option value="4">Kuning</option>
+    <option value="5">Hijau</option>
+    <option value="6">Biru</option>
+    <option value="7">Ungu</option>
+    <option value="8">Abu-Abu</option>
+    <option value="9">Putih</option>
+    <option value="-1">Emas</option>
+    <option value="-2">Perak</option>
+  
+</select>
+Cincin 4 = <select id="ring4">
+    <option value="5%">Emas</option>
+    <option value="10%">Perak</option>
+    <option value="20%">Tak Berwarna</option>
+</select>
+<br><button type="button" onclick='functionresistor()'>Jumlahkan resistor</button>
+	<br><label id='hasilres'>HASIL</label>
+	ohm dengan toleransi sebesar
+	<label id=toleransi> x </label>
+
+</body>
+
+
+
+<script type="text/javascript">
+    	function functionjumlah() 
+    	{
+    		var a = document.getElementById('input1').value;
+    		var b = document.getElementById('input2').value;
+    		var c = eval(a) + eval(b);
+    		document.getElementById("hasil").innerHTML = c;
+    	}
+    </script>
+    <script type="text/javascript">
+    	var r1, r2, r3, r4, rtoleransi;
+    	function functionresistor()
+    	{
+    		var r1 = document.getElementById('ring1').selectedIndex;
+    		var r2 = document.getElementById('ring2').selectedIndex;
+    		var r3 = document.getElementById('ring3').selectedIndex;
+    		var rtotal = eval(String(r1) +String(r2)) * Math.pow(10,eval(r3));
+    		var rtoleransi = document.getElementById('ring4').value;
+    		
+    		document.getElementById("hasilres").innerHTML = rtotal;
+    		
+    		document.getElementById("toleransi").innerHTML = rtoleransi;
+    	}
+    </script>
+</html>
